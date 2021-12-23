@@ -5,5 +5,51 @@
 }
 
 body {
-    background-color: green;
+    background: #070515;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: #fff;
 }
+
+main {
+    background-color: #0f0b24;
+    width: 70vw;
+    height: 100vh;
+
+    .date {
+        font-family: 'Roboto Slab', serif;
+        font-size: 4rem;
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        padding-top: 4rem;
+    }
+
+    .assigning {
+        font-family: 'Outfit', sans-serif;
+        padding: 6rem 0 0 10rem;
+    }
+
+    .text-area-driver {
+        margin: .8rem 0 0 10rem;
+        border: none;
+        border-radius: 5px;
+        height: 20px;
+    }
+
+    .van-number {
+        font-family: 'Outfit', sans-serif;
+        padding-left: 60rem;
+        margin-top: -4.4rem;
+    }
+
+    .text-area-van {
+        margin: .8rem 0 0 60rem;
+        border: none;
+        border-radius: 5px;
+        height: 20px;
+    }
+}
+
+
