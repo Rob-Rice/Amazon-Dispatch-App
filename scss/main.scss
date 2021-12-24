@@ -5,50 +5,97 @@
 }
 
 body {
-    background: #070515;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    color: #fff;
+    background: #e2e2df;
+    color: #383838;
+    overflow-x: hidden;
 }
 
-main {
-    background-color: #0f0b24;
-    width: 70vw;
-    height: 100vh;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 5px 2%;
+    background-color: #929292;
+
+    .fa-calendar-alt {
+
+    }
 
     .date {
         font-family: 'Roboto Slab', serif;
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 900;
+    }
+
+    .van-count {
         display: flex;
-        justify-content: center;
-        padding-top: 4rem;
+        flex-direction: row;
+        padding-right: 2%;
+
+        .fa-shuttle-van {
+            padding: 0 5%;
+        }
+
+        .fa-equals {
+            padding: 0 7%;
+            position: relative;
+            padding-top: 7%;
+        }
+
+        .number {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.8rem;
+        }
+    }
+}
+
+main {
+    margin: 2.4rem auto 0 auto;
+    background-color: #ececeb;
+    height: 97vh;
+    width: 65vw;
+    border-radius: 7px;
+    position: relative;
+
+    .assinging {
+        display: flex;
+        flex-direction: column;
+        padding: 11rem 0 0 10rem;
+        // border: green solid 3px;
+
+        .drivers {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .text-area-driver {
+            border: none;
+            border-radius: 5px;
+            height: 20px;
+            width: 11rem;
+            margin-top: 1rem;
+            // add some box shadow
+        }
     }
 
-    .assigning {
-        font-family: 'Outfit', sans-serif;
-        padding: 6rem 0 0 10rem;
-    }
+    .vans { 
+        display: flex;
+        flex-direction: column;
+        padding-left: 70%;
+        margin-top: -4.3rem;
 
-    .text-area-driver {
-        margin: .8rem 0 0 10rem;
-        border: none;
-        border-radius: 5px;
-        height: 20px;
-    }
+        .van-number {
+            font-family: 'Outfit', sans-serif;
+        }
 
-    .van-number {
-        font-family: 'Outfit', sans-serif;
-        padding-left: 60rem;
-        margin-top: -4.4rem;
-    }
-
-    .text-area-van {
-        margin: .8rem 0 0 60rem;
-        border: none;
-        border-radius: 5px;
-        height: 20px;
+        .text-area-van {
+            border: none;
+            border-radius: 5px;
+            height: 20px;
+            width: 11rem;
+            margin-top: 1rem;
+        }
     }
 }
 

@@ -10,24 +10,54 @@
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?
     family=Nunito+Sans:wght@300&family=Outfit&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=
     swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
+    crossorigin="anonymous">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dispatch </title>
 </head>
 <body>
+    <div class="navbar">
+        <nav>
+            <i class="far fa-calendar-alt fa-3x"></i>
+            <span class="date"></span>
+            <div class="van-count">
+                <i class="fas fa-shuttle-van fa-3x"></i> 
+                <i class="fas fa-equals fa-2x"></i>
+                <span class="number">0</span>
+            </div>
+        </nav>
+    </div>
     <main>
-        <span class="date"></span>
-        <h1 class="assigning">
-            Assign Drivers To Vans 
-        </h1>
-        <input type="text" role="textbox" class="text-area-driver" placeholder="Name">
-        <h1 class="van-number">
-            Van Number 
-        </h1>
-        <input type="text" role="textbox" class="text-area-van" placeholder="Van Number">
-
+        <div class="assinging">
+            <h2 class="drivers">
+                Assign Drivers To Vans 
+            </h2>
+            <input type="text" role="textbox" class="text-area-driver" placeholder="Name">
+            <span></span>
+        </div>
+        <div class="vans">
+            <h2 class="van-number">
+                Van Number 
+            </h2>
+            <input type="text" class="text-area-van" placeholder="Van Number">
+            <span></span>
+        </div>
     </main>
+    <article class="notes-container">
+        <p class="notes">
+            NOTES
+        </p>
+        <input type="text" class="notes-input" placeholder="lemme know">
+    </article>
 
     <!-- Javascript -->
     <script src="./app.js"></script>
