@@ -51,7 +51,7 @@ nav {
     }
 }
 
-main {
+form {
     margin: 2.4rem auto 0 auto;
     background-color: #ececeb;
     height: 97vh;
@@ -59,44 +59,123 @@ main {
     border-radius: 7px;
     position: relative;
 
-    .assinging {
+    .waves {
+        font-family: 'Outfit', sans-serif;
         display: flex;
-        flex-direction: column;
-        padding: 11rem 0 0 10rem;
-        // border: green solid 3px;
+        justify-content: center;
+        padding-top: 5%;
 
-        .drivers {
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .text-area-driver {
-            border: none;
-            border-radius: 5px;
-            height: 20px;
-            width: 11rem;
-            margin-top: 1rem;
-            // add some box shadow
+        a {
+            text-decoration: none;
+            color: #383838;
         }
     }
 
-    .vans { 
-        display: flex;
-        flex-direction: column;
-        padding-left: 70%;
-        margin-top: -4.3rem;
+    .fa-circle {
+        padding: 5px 5px 0 5px;
+    }
 
-        .van-number {
-            font-family: 'Outfit', sans-serif;
+    .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 5% 7% 0 0;
+
+        .delete {
+            padding-top: 4%;
+
+            a{
+                text-decoration: none;
+                color: #e27171;
+            }
         }
 
-        .text-area-van {
-            border: none;
-            border-radius: 5px;
-            height: 20px;
-            width: 11rem;
-            margin-top: 1rem;
+        .assinging {
+
+            .drivers {
+                font-family: 'Outfit', sans-serif;
+                text-decoration: underline;
+
+            }
+
+            .text-area-driver {
+                border: none;
+                border-radius: 5px;
+                height: 20px;
+                width: 11rem;
+                margin-top: 1rem;
+            }
+        }
+
+        .vans { 
+
+            .van-number {
+                font-family: 'Outfit', sans-serif;
+                text-decoration: underline;
+            }
+
+            .text-area-van {
+                border: none;
+                border-radius: 5px;
+                height: 20px;
+                width: 11rem;
+                margin-top: 1rem;
+            }
+        }
+
+        .cx { 
+
+            .cx-number {
+                font-family: 'Outfit', sans-serif;
+                text-decoration: underline;
+
+            }
+
+            .text-area-cx {
+                border: none;
+                border-radius: 5px;
+                height: 20px;
+                width: 11rem;
+                margin-top: 1rem;
+            }
         }
     }
 }
 
+.notes-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 6%;
+    margin-top: -49%;
 
+    .notes {
+        font-family: 'Outfit', sans-serif;
+        display: flex;
+        padding-right: 6%;
+        font-weight: 900;
+        color: rgb(191, 127, 216);
+    }
+
+    .notes-input {
+        border: none;
+        border-radius: 6px;
+        height: 20px;
+        width: 12rem;
+        margin-top: .5%;
+    }
+}
+
+.add-driver {
+    // display: flex;
+    // justify-content: center;
+    position: relative;
+    margin: 10% 0 0 48%;
+
+
+    a {
+        text-decoration: none;
+        color: rgb(96, 167, 82);
+    }
+}
