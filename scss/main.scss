@@ -84,7 +84,9 @@ form {
         .delete {
             padding-top: 4%;
 
-            a{
+            button{
+                cursor: pointer;
+                border: none;
                 text-decoration: none;
                 color: #e27171;
             }
@@ -168,14 +170,14 @@ form {
 }
 
 .add-driver {
-    // display: flex;
-    // justify-content: center;
-    position: relative;
-    margin: 10% 0 0 48%;
+    // position: relative;
+    padding: 4% 0 0 48%;
 
-
-    a {
+    button {
+        border: none;
         text-decoration: none;
-        color: rgb(96, 167, 82);
+        color: #60a752;
+        cursor: pointer;
+        z-index: 1000;
     }
 }
