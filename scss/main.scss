@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
 }
 
+// ----------------- navbar ----------------- 
 nav {
     display: flex;
     justify-content: space-between;
@@ -26,6 +27,7 @@ nav {
         font-family: 'Roboto Slab', serif;
         font-size: 3rem;
         font-weight: 900;
+        padding-left: 2%;
     }
 
     .van-count {
@@ -33,24 +35,22 @@ nav {
         flex-direction: row;
         padding-right: 2%;
 
-        .fa-shuttle-van {
-            padding: 0 5%;
-        }
 
-        .fa-equals {
-            padding: 0 7%;
-            position: relative;
-            padding-top: 7%;
+        .fa-shuttle-van {
+            margin: 0 0 0 -55%;
         }
 
         .number {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 2.8rem;
+            position: absolute;
+            padding-left: 2.5rem;
         }
     }
 }
 
+// ----------------- form ----------------- 
 form {
     margin: 2.4rem auto 0 auto;
     background-color: #ececeb;
@@ -59,6 +59,7 @@ form {
     border-radius: 7px;
     position: relative;
 
+// ----------------- waves ----------------- 
     .waves {
         font-family: 'Outfit', sans-serif;
         display: flex;
@@ -79,71 +80,70 @@ form {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        margin: 5% 7% 0 0;
+        margin: 5% 10% 0 0;
+    }
 
-        .delete {
-            padding-top: 4%;
 
-            button{
-                cursor: pointer;
-                border: none;
-                text-decoration: none;
-                color: #e27171;
-            }
+    .assinging {
+
+        .drivers {
+            font-family: 'Outfit', sans-serif;
+            text-decoration: underline;
+
         }
 
-        .assinging {
+        .text-area-driver {
+            border: none;
+            border-radius: 5px;
+            height: 20px;
+            width: 11rem;
+            margin-top: 1rem;
 
-            .drivers {
-                font-family: 'Outfit', sans-serif;
-                text-decoration: underline;
-
-            }
-
-            .text-area-driver {
-                border: none;
-                border-radius: 5px;
-                height: 20px;
-                width: 11rem;
-                margin-top: 1rem;
-            }
-        }
-
-        .vans { 
-
-            .van-number {
-                font-family: 'Outfit', sans-serif;
-                text-decoration: underline;
-            }
-
-            .text-area-van {
-                border: none;
-                border-radius: 5px;
-                height: 20px;
-                width: 11rem;
-                margin-top: 1rem;
-            }
-        }
-
-        .cx { 
-
-            .cx-number {
-                font-family: 'Outfit', sans-serif;
-                text-decoration: underline;
-
-            }
-
-            .text-area-cx {
-                border: none;
-                border-radius: 5px;
-                height: 20px;
-                width: 11rem;
-                margin-top: 1rem;
-            }
+            .text-area-drive:-webkit-autofill {
+                border: 3px solid blue;
+                }
+                .text-area-drive:autofill {
+                border: 3px solid blue;
+                }
         }
     }
+
+    .vans { 
+
+        .van-number {
+            font-family: 'Outfit', sans-serif;
+            text-decoration: underline;
+        }
+
+        .text-area-van {
+            border: none;
+            border-radius: 5px;
+            height: 20px;
+            width: 11rem;
+            margin-top: 1rem;
+        }
+    }
+
+    .cx { 
+
+        .cx-number {
+            font-family: 'Outfit', sans-serif;
+            text-decoration: underline;
+
+        }
+
+        .text-area-cx {
+            border: none;
+            border-radius: 5px;
+            height: 20px;
+            width: 11rem;
+            margin-top: 1rem;
+        }
+    }
+    
 }
 
+// ----------------- notes section ----------------- 
 .notes-container {
     position: relative;
     display: flex;
@@ -169,9 +169,9 @@ form {
     }
 }
 
+// ----------------- add button ----------------- 
 .add-driver {
-    // position: relative;
-    padding: 4% 0 0 48%;
+    margin: -2% 0 0 85%;
 
     button {
         border: none;
@@ -180,4 +180,12 @@ form {
         cursor: pointer;
         z-index: 1000;
     }
+}
+
+// ----------------- delete button ----------------- 
+.delete{
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color: #e27171;
 }
