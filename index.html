@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dispatch </title>
 </head>
-<body>
+<body class="body">
     <!-- navbar -->
     <div class="navbar">
         <nav>
@@ -36,7 +36,7 @@
             </div>
         </nav>
     </div>
-    <form>
+    <form id="driver-form">
         <!-- start of waves -->
         <div class="waves">
             <p class="first">
@@ -58,53 +58,49 @@
             </p>
         </div>
         <div class="info">
-/
-            <!-- put in info section -->
+            <!-- input section -->
             <div class="assinging">
                 <h2 class="drivers">
                     DRIVER
                 </h2>
-                <input type="text" role="textbox" class="text-area-driver driver-input" 
-                placeholder="name" autocomplete="name">
-                <span></span>
+                <!-- <div class="form-group"> -->
+                <input type="text" class="text-area-driver form-control" 
+                placeholder="name" id="driver-input">
+                <!-- </div> -->
             </div>
             <div class="cx">
                 <h2 class="cx-number">
                     CX-NUMBER
                 </h2>
-                <input type="text" class="text-area-cx route-number" placeholder="cx-number">
-                <span></span>
+                <input type="text" class="text-area-cx form-control" placeholder="cx-number" id="cx-input">
             </div>
             <div class="vans">
                 <h2 class="van-number">
                     VAN NUMBER 
                 </h2>
-                <input type="text" class="text-area-van driver-van" placeholder="van number">
-                <span></span>
+                <input type="text" class="text-area-van form-control" placeholder="van number" id="van-input">
             </div>
+        <button type="submit" class="add-button"><i class="fas fa-plus-circle fa-2x"></i></button>
         </div>
-        <!-- plus btn -->
-        <div class="add-driver">
-            <button class="btn increase add-btn" id="btn">
-                    <i class="fas fa-plus-circle fa-2x"></i>
-            </button>
-        </div>
+        <!-- table section -->
+        <table class="table">
+        <thead class="t-head">
+
+        </thead>
+        <tbody id="driver-list">
+
+        </tbody>
+        </table> 
     </form>
+    <!-- notes section -->
     <article class="notes-container">
         <p class="notes">
             NOTES
         </p>
         <input type="text" class="notes-input" placeholder="...">
     </article>
-    <div class="driver-container">
-        <ul class="driver-list"></ul>
-      </div>
-
 
     <!-- Javascript -->
     <script src="./app.js"></script>
 </body>
 </html>
-
-
-<!-- put in van counter -->
