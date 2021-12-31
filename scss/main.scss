@@ -155,13 +155,26 @@ z-index: -1;
     .table {
         display: flex;
         justify-content: space-evenly;
-        width: 100%;
         color: #383838;
         font-family: 'Outfit', sans-serif;
+        padding-right: 9%;
+
+        td {
+            position: relative;
+
+            &:nth-child(even) {
+                background-color:#f8f8f8;
+            }
+
+            &:nth-child(odd) {
+                background-color:#ccc;
+            } 
+        }
 
         .drivers-name {
-            padding-right: 12rem;
             white-space: nowrap;
+            min-width: 290px;
+            margin-left: -40rem;
         }
 
         .drivers-cx {
@@ -169,7 +182,7 @@ z-index: -1;
         }
 
         .drivers-van {
-            padding-right: 16rem;
+            padding-right: 10rem;
         }
 
 
@@ -234,7 +247,7 @@ z-index: -1;
     width: 10%;
     display: flex;
     justify-content: center;
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-name: showBlock;
     color: #fff;
     background-color: rgb(243, 179, 179);

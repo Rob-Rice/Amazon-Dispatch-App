@@ -46,18 +46,7 @@ class Driver {
     // UI Class: Handle UI Tasks
     class UI {
     static displayDrivers() {
-        const drivers = [
-                    {
-                        driver: 'Roberto Rice',
-                        cx: '144',
-                        van: '33'
-                    },
-                    {
-                        driver: 'Rob Rice',
-                        cx: '14',
-                        van: 'R 33'
-                    }
-                ];
+        const drivers = Store.getDrivers();
 
         drivers.forEach((name) => UI.addDriverToList(name));
     }
@@ -76,13 +65,14 @@ class Driver {
 
         list.appendChild(row);
     }
-
+// delete driver
     static deleteDriver(el) {
         if(el.classList.contains('delete')) {
             el.parentElement.parentElement.remove();
         }
     } 
 
+// error message
     static showAlert(message, className) {
         const div = document.createElement('div');
         div.className= `alert-message`;
@@ -90,8 +80,13 @@ class Driver {
         const body = document.querySelector('.body');
         const form = document.querySelector('#driver-form');
         body.insertBefore(div, form);
+
+        // vanish message
+        setTimeout(() => document.querySelector('.alert-message').remove(),
+        3000);
     }
 
+// clear after entering a new driver 
     static clearFields() {
         document.querySelector('#driver-input').value = '';
         document.querySelector('#cx-input').value = '';
@@ -99,6 +94,42 @@ class Driver {
     }
 }
 
+// storage
+class Store {
+    static getDrivers () {
+        let drivers;
+        if(localStorage.getItem('drivers') === null) {
+            drivers = [];
+        } else {
+            drivers = JSON.parse(localStorage.getItem('drivers'));
+        }
+
+        return drivers;
+    }
+
+    static addDriver(driver) {
+        const drivers = Store.getDrivers();
+
+        drivers.push(driver);
+
+        localStorage.setItem('drivers', JSON.stringify(drivers));
+    }
+
+    static removeDriver(employee) {
+        const drivers = Store.getDrivers();
+
+        drivers.forEach((driver, index) => {
+            if(driver.employee === employee) {
+                drivers.splice(index, 1);
+            }
+        });
+
+        localStorage.setItem('drivers', JSON.stringify(drivers));
+    }
+}
+
+
+// display drivers
 document.addEventListener('DOMContentLoaded', UI.displayDrivers);
 
 // add driver
@@ -112,27 +143,21 @@ document.querySelector('#driver-form').addEventListener('submit', (event) => {
 
     // validate
     if(driverName === '' || cx === '' || van === '') {
-        // alert('Please fill in all fields');
         UI.showAlert('Please fill in all fields');
     } else {
         // instatiate book
         const driver = new Driver(driverName, cx, van);
 
-        // add add to ui
+        // add driver to store
+        Store.addDriver(driver);
+
+        // add driver to ui
         UI.addDriverToList(driver);
 
         // clear fields 
         UI.clearFields();
     }
 
-    // // instatiate book
-    // const driver = new Driver(driverName, cx, van);
-
-    // // add add to ui
-    // UI.addDriverToList(driver);
-
-    // // clear fields 
-    // UI.clearFields();
 });
 
 
