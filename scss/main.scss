@@ -68,10 +68,18 @@ z-index: -1;
         display: flex;
         justify-content: center;
         padding-top: 5%;
+        gap: 8px;
 
         a {
             text-decoration: none;
             color: #383838;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .active {
+            text-decoration: underline;
         }
     }
 
@@ -79,6 +87,7 @@ z-index: -1;
         padding: 5px 5px 0 5px;
     }
 
+// ----------------- drivers name input area ----------------- 
     .info {
         display: flex;
         flex-direction: row;
@@ -86,7 +95,6 @@ z-index: -1;
         margin: 5% 0 0 12%;
     }
 
-// ----------------- drivers name input area ----------------- 
     .assinging {
 
         .drivers {
@@ -113,7 +121,7 @@ z-index: -1;
         }
     }
 
-// ----------------- CX number input are ----------------- 
+// ----------------- CX number input area ----------------- 
         .cx { 
 
             .cx-number {
@@ -192,7 +200,6 @@ z-index: -1;
 
     .delete{
         position: absolute;
-        // pointer-events: none;
         cursor: pointer;
         border: none;
         text-decoration: none;
