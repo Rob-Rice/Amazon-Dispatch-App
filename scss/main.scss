@@ -198,17 +198,17 @@ z-index: -1;
 
     // ----------------- delete button ----------------- 
 
-    .delete{
+    .delete, .add-delete {
         position: absolute;
         cursor: pointer;
         border: none;
         text-decoration: none;
-        color: #e27171;
-        margin: -.7rem 0 0 -1.5rem;
+        color: #f88282;
+        margin: -.5rem 0 0 -1.5rem;
     }
 
 // ----------------- add button ----------------- 
-    .add-button {
+    .add-button, .add-delete {
         position: relative;
         border: none;
         text-decoration: none;
@@ -257,7 +257,7 @@ z-index: -1;
     animation-duration: .5s;
     animation-name: showBlock;
     color: #fff;
-    background-color: rgb(243, 179, 179);
+    background-color: #f3b3b3;
     border-radius: 6px;
 }
 

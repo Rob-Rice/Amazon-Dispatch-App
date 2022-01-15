@@ -8,26 +8,6 @@ let year = today.getFullYear();
 // date at top of page
 date.textContent = `${day}/${month}/${year}`;
 
-// ----------------- van counter -----------------
-const value = document.getElementById('value');
-const btns = document.querySelectorAll('.btn');
-const addBtn = document.querySelector('.add-btn');
-let count = 0;
-
-btns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault(); // stop form from submitting
-        const styles = e.currentTarget.classList;
-        if(styles.contains('delete')) { // subtracting to count
-            count--;
-        } else if (styles.contains('add-button')) { // add from count 
-            count++;
-        } 
-
-        value.textContent = count;
-    });
-});
-
 // ----------------- add & remove driver UI/storage ----------------- 
 class Driver {
     constructor(driver, cx, van) {
@@ -51,10 +31,10 @@ class Driver {
         const row = document.createElement('tr');
 
         row.innerHTML = `
-        <td><a href="#" class="btn delete">X</a></td>
-        <td class="drivers-name">${name.driver}</td>
-        <td class="drivers-cx">${name.cx}</td>
-        <td class="drivers-van">${name.van}</td>
+        <td><button type="submit" class="btn delete get-out">X</button></td>
+        <td class="drivers-name none">${name.driver}</td>
+        <td class="drivers-cx none">${name.cx}</td>
+        <td class="drivers-van none">${name.van}</td>
         `;
 
         list.appendChild(row);
@@ -62,8 +42,8 @@ class Driver {
 // delete driver
     static deleteDriver(el) {
         if(el.classList.contains('delete')) {
-            el.parentElement.parentElement.remove();
-        }
+            el.parentElement.parentElement.remove()
+        } 
     } 
 
 // error message
@@ -139,7 +119,7 @@ document.querySelector('#driver-form').addEventListener('submit', (event) => {
     if(driverName === '' || cx === '' || van === '') {
         UI.showAlert('Please fill in all fields');
     } else {
-        // instatiate book
+        // instatiate driver
         const driver = new Driver(driverName, cx, van);
 
         // add driver to store
@@ -151,7 +131,6 @@ document.querySelector('#driver-form').addEventListener('submit', (event) => {
         // clear fields 
         UI.clearFields();
     }
-
 });
 
 
@@ -163,3 +142,39 @@ document.querySelector('#driver-list').addEventListener('click', (e) => {
     // remove driver from storage
     Store.removeDriver(e.target.parentElement.remove());
 });
+
+// ----------------- van counter ----------------- 
+let count = 0;
+const form = document.querySelector('.form-one');
+const vanNumber = document.getElementById('value');
+
+
+form.addEventListener('submit', (e) => {
+    // adding van number
+    const add = document.querySelectorAll('.drivers-name');
+    // no vans add if reuiered fields arent met 
+    const no = document.querySelector('.alert-message');
+    if (add) {
+        count++;
+    } if (no) {
+        count--;
+    }  
+
+    vanNumber.textContent = count;
+});
+
+const table = document.querySelector('.table')
+
+table.addEventListener('click', (e) => {
+    // subtracting van number
+    const btn = e.target.classList;
+    if(btn.contains('delete')){
+        count--;
+    } if (btn.contains('none')) {
+        count--;
+    }
+
+    vanNumber.textContent = count;
+    console.log(e.target.classList);
+});
+

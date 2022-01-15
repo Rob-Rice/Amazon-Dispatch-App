@@ -36,23 +36,23 @@
             </div>
         </nav>
     </div>
-    <form id="driver-form">
+    <form id="driver-form" class="form-one">
         <!-- start of waves -->
         <div class="waves">
             <p class="first">
-                <a data-id="first" class="tab-btn active">
+                <a data-id="first" class="active">
                     FIRST WAVE
                 </a>
             </p>
             <i class="fas fa-circle fa-xs"></i>
             <p class="second">
-                <a href="wave2.html" data-id="second" class="tab-btn">
+                <a href="wave2.html" data-id="second" class="">
                     SECOND WAVE
                 </a>
             </p>
             <i class="fas fa-circle fa-xs"></i>
-            <p class="third tab-btn">
-                <a href="wave3.html" data-id="third" class=" tab-btn">
+            <p class="third">
+                <a href="wave3.html" data-id="third" class="">
                     THIRD WAVE
                 </a>
             </p>
@@ -63,10 +63,7 @@
                 <h2 class="drivers">
                     DRIVER
                 </h2>
-                <!-- <div class="form-group"> -->
-                <input type="text" class="text-area-driver form-control" 
-                placeholder="name" id="driver-input">
-                <!-- </div> -->
+                <input type="text" class="text-area-driver form-control" placeholder="name" id="driver-input">
             </div>
             <div class="cx">
                 <h2 class="cx-number">
@@ -80,14 +77,15 @@
                 </h2>
                 <input type="text" class="text-area-van form-control" placeholder="van number" id="van-input">
             </div>
-        <button type="submit" class="add-button"><i class="fas fa-plus-circle fa-2x"></i></button>
+            <!-- add button -->
+            <button type="submit" class="add-button"><i class="fas fa-plus-circle fa-2x"></i></button>
         </div>
         <!-- table section -->
         <table class="table">
         <thead class="t-head">
 
         </thead>
-        <tbody id="driver-list">
+        <tbody id="driver-list" class="tr-info">
 
         </tbody>
         </table> 
