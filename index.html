@@ -82,23 +82,36 @@
         </div>
         <!-- table section -->
         <table class="table">
-        <thead class="t-head">
-
-        </thead>
-        <tbody id="driver-list" class="tr-info">
-
-        </tbody>
+            <thead class="t-head">
+            </thead>
+            <tbody id="driver-list" class="tr-info">
+            </tbody>
         </table> 
     </form>
-    <!-- notes section -->
+    <!-- notes section --> 
     <article class="notes-container">
-        <p class="notes">
-            NOTES
-        </p>
-        <input type="text" class="notes-input" placeholder="...">
+        <form class="notes-form">
+            <div class="notes-add">
+                <p class="notes">
+                    NOTES
+                </p>
+                <button id="add-btn" class="add-note" id="notes-input" type="submit">
+                    add
+                </button>
+            </div>
+            <!-- <span class="notes-textarea" id="note-input"role="textbox" contenteditable></span> -->
+            <input type="text" class="notes-textarea" id="note-input" placeholder="..." contenteditable>
+        </form>
+        <div class="note-list">
+            <ul class="added-notes">
+            </ul>
+        </div>
     </article>
+    
+
 
     <!-- Javascript -->
     <script src="./app.js"></script>
 </body>
 </html>
+

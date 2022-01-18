@@ -119,7 +119,7 @@ document.querySelector('#driver-form').addEventListener('submit', (event) => {
     if(driverName === '' || cx === '' || van === '') {
         UI.showAlert('Please fill in all fields');
     } else {
-        // instatiate book
+        // instatiate driver
         const driver = new Driver(driverName, cx, van);
 
         // add driver to store
@@ -131,7 +131,6 @@ document.querySelector('#driver-form').addEventListener('submit', (event) => {
         // clear fields 
         UI.clearFields();
     }
-
 });
 
 
@@ -145,7 +144,8 @@ document.querySelector('#driver-list-2').addEventListener('click', (e) => {
 });
 
 // ----------------- van counter ----------------- 
-let count = 0;
+let count = localStorage.getItem('van-number-2') || 0
+document.querySelector('.number').innerText = count
 const form = document.querySelector('.form-one');
 const vanNumber = document.getElementById('value');
 
@@ -162,6 +162,7 @@ form.addEventListener('submit', (e) => {
     }  
 
     vanNumber.textContent = count;
+    localStorage.setItem('van-number-2', count)
 });
 
 const table = document.querySelector('.table')
@@ -176,5 +177,5 @@ table.addEventListener('click', (e) => {
     }
 
     vanNumber.textContent = count;
-    console.log(e.target.classList);
+    localStorage.setItem('van-number-2', count)
 });

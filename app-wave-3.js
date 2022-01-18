@@ -145,7 +145,8 @@ document.querySelector('#driver-list-3').addEventListener('click', (e) => {
 });
 
 // ----------------- van counter ----------------- 
-let count = 0;
+let count = localStorage.getItem('van-number-3') || 0
+document.querySelector('.number').innerText = count
 const form = document.querySelector('.form-one');
 const vanNumber = document.getElementById('value');
 
@@ -162,6 +163,7 @@ form.addEventListener('submit', (e) => {
     }  
 
     vanNumber.textContent = count;
+    localStorage.setItem('van-number-3', count)
 });
 
 const table = document.querySelector('.table')
@@ -176,5 +178,5 @@ table.addEventListener('click', (e) => {
     }
 
     vanNumber.textContent = count;
-    console.log(e.target.classList);
+    localStorage.setItem('van-number-3', count)
 });
