@@ -1,6 +1,14 @@
 $medium-gray: #929292;
+$very-light-gray: #e2e2df;
 $very-very-light-gray: #ececeb;
 $dark-gray: #383838;
+$lighter-td: #f8f8f8;
+$darker-td: #ccc;
+$red: #fd0002;
+$green: #60a752;
+$white: #fff;
+$light-red: #f3b3b3;
+$purple: #bf7fd8;
 
 
 * {
@@ -10,7 +18,7 @@ $dark-gray: #383838;
 }
 
 body {
-    background: #e2e2df;
+    background: $very-light-gray;
     color: $dark-gray;
     overflow-x: hidden;
 }
@@ -176,11 +184,11 @@ position: relative;
             position: relative;
 
             &:nth-child(even) {
-                background-color:#f8f8f8;
+                background-color: $lighter-td;
             }
 
             &:nth-child(odd) {
-                background-color:#ccc;
+                background-color: $darker-td;
             } 
         }
 
@@ -208,8 +216,7 @@ position: relative;
         cursor: pointer;
         border: none;
         text-decoration: none;
-        // color: #f88282;
-        color: #fd0002;
+        color: $red;
         margin: -.5rem 0 0 -1.5rem;
     }
 
@@ -218,7 +225,7 @@ position: relative;
         position: relative;
         border: none;
         text-decoration: none;
-        color: #60a752;
+        color: $green;
         cursor: pointer;
         margin-top: 4%;
     }
@@ -246,12 +253,12 @@ position: relative;
                 display: flex;
                 padding-right: 6%;
                 font-weight: 900;
-                color: #bf7fd8;
+                color: $purple;
             }
 
             .add-note {
-                background-color: #bf7fd8;
-                color: #fff;
+                background-color: $purple;
+                color: $white;
                 font-family: 'Outfit', sans-serif;
                 border: none;
                 cursor: pointer;
@@ -262,15 +269,15 @@ position: relative;
                 transition: ease-in .2s;
 
                 &:hover {
-                    color: #bf7fd8;
-                    background-color: #fff;
+                    color: $purple;
+                    background-color: $white;
                 }
             }
         }
 
         .notes-textarea {
             display: block;
-            background-color: #fff;
+            background-color: $white;
             border-radius: 6px;
             border: $dark-gray solid 1px;
             width: 15rem;
@@ -295,7 +302,6 @@ position: relative;
         flex-direction: row;
         justify-content: space-between;
         margin: .3rem;
-        // background-color: green;//////////////////////////////////////////////////////
 
         .note-item{
             list-style-type: none;
@@ -306,16 +312,21 @@ position: relative;
 
         .completed-btn {
             border: none;
-            background-color: #e2e2df;
-            color: #a1a314;
             cursor: pointer;
+            background-color: $green;
+            color: $white;
+            border-radius: 50%;
+            width: 20px;
+            margin-right: 1.5%;
         }
 
         .trash-btn {
             border: none;
-            background-color: #e2e2df;
-            color: green;
             cursor: pointer;
+            background-color: $red;
+            color: $white;
+            border-radius: 50%;
+            width: 20px;
         }
 
         .fa-trash-alt,
@@ -329,6 +340,7 @@ position: relative;
 .completed {
     text-decoration: line-through;
     opacity: .6;
+    transition: ease-in .3s;
 }
 
 
@@ -343,8 +355,8 @@ position: relative;
     justify-content: center;
     animation-duration: .5s;
     animation-name: showBlock;
-    color: #fff;
-    background-color: #f3b3b3;
+    color: $white;
+    background-color: $light-red;
     border-radius: 6px;
 }
 

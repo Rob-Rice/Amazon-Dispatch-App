@@ -172,7 +172,6 @@ table.addEventListener('click', (e) => {
     if(btn.contains('delete')){
         count--;
     } if (btn.contains('none')) {
-        // count--;
         return;
     }
 

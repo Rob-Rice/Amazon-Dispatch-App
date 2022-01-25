@@ -31,10 +31,11 @@ class Driver {
         const row = document.createElement('tr');
 
         row.innerHTML = `
-        <td><a href="#" class="btn delete">X</a></td>
-        <td class="drivers-name">${name.driver}</td>
-        <td class="drivers-cx">${name.cx}</td>
-        <td class="drivers-van">${name.van}</td>
+        <td><button type="submit" class="btn delete vivify pullDown">X</button></td>
+
+        <td class="drivers-name vivify pullDown">${name.driver}</td>
+        <td class="drivers-cx vivify pullDown">${name.cx}</td>
+        <td class="drivers-van vivify pullDown">${name.van}</td>
         `;
 
         list.appendChild(row);
@@ -179,3 +180,117 @@ table.addEventListener('click', (e) => {
     vanNumber.textContent = count;
     localStorage.setItem('van-number-2', count)
 });
+
+// ----------------- notes storage ----------------- 
+const notesInput = document.getElementById('note-input');
+const notesBtn = document.getElementById('add-btn');
+const notesAdded = document.querySelector('.added-notes');
+
+document.addEventListener('DOMContentLoaded', getNotes);
+
+// add notes
+notesBtn.addEventListener('click', addNote)
+
+function addNote (ev) {
+    // prevent form from submitting
+    ev.preventDefault()
+    // note dive
+    const noteDiv = document.createElement('div');
+    noteDiv.classList.add('noteDiv');
+    // adding note to local storage
+    saveNotes(notesInput.value)
+    // create note li
+    const newNote = document.createElement('li');
+    newNote.innerText = notesInput.value;
+    newNote.classList.add('note-item');
+    noteDiv.appendChild(newNote);
+    // strike through button
+    const completedNote = document.createElement('button');
+    completedNote.innerHTML = '<i class="far fa-dot-circle"></i>';
+    completedNote.classList.add('completed-btn');
+    noteDiv.appendChild(completedNote);
+    // delete through button
+    const deleteNotes = document.createElement('button');
+    deleteNotes.innerHTML = '<i class="fas fa-trash-alt"></i>';
+    deleteNotes.classList.add('trash-btn');
+    noteDiv.appendChild(deleteNotes);
+    // append to list
+    notesAdded.appendChild(noteDiv)
+    // return value in input to nothing after submit
+    notesInput.value = '';
+}
+
+// delete and check notes
+notesAdded.addEventListener('click', deleteCheck);
+
+function deleteCheck(e) {
+    const item = e.target;
+    // delete
+    if(item.classList[0] === 'trash-btn') {
+        const note = item.parentElement;
+        removeNotes(note)
+        note.remove();
+    }
+    // strike through
+    if(item.classList[0] === 'completed-btn') {
+        const note = item.parentElement;
+        note.classList.toggle('completed');
+    }
+}
+
+
+// saving notes
+function saveNotes(note) {
+    let notes;
+    if(localStorage.getItem('notes') === null) {
+        notes = [];
+    } else {
+        notes = JSON.parse(localStorage.getItem('notes')); 
+    }
+
+    notes.push(note);
+    localStorage.setItem('notes', JSON.stringify(notes));
+}
+
+function getNotes() {
+    let notes;
+    if(localStorage.getItem('notes') === null) {
+        notes = [];
+    } else {
+        notes = JSON.parse(localStorage.getItem('notes')); 
+    }
+    notes.forEach(function(note) {
+    // note dive
+    const noteDiv = document.createElement('div');
+    noteDiv.classList.add('noteDiv');
+    // create note li
+    const newNote = document.createElement('li');
+    newNote.innerText = note;
+    newNote.classList.add('note-item');
+    noteDiv.appendChild(newNote);
+    // strike through button
+    const completedNote = document.createElement('button');
+    completedNote.innerHTML = '<i class="far fa-dot-circle"></i>';
+    completedNote.classList.add('completed-btn');
+    noteDiv.appendChild(completedNote);
+    // delete through button
+    const deleteNotes = document.createElement('button');
+    deleteNotes.innerHTML = '<i class="fas fa-trash-alt"></i>';
+    deleteNotes.classList.add('trash-btn');
+    noteDiv.appendChild(deleteNotes);
+    // append to list
+    notesAdded.appendChild(noteDiv)
+    })
+}
+
+function removeNotes(note) {
+    let notes;
+    if(localStorage.getItem('notes') === null) {
+        notes = [];
+    } else {
+        notes = JSON.parse(localStorage.getItem('notes')); 
+    }
+    const noteIndex = note.children[0].innerText;
+    notes.splice(notes.indexOf(noteIndex), 1);
+    localStorage.setItem('notes', JSON.stringify(notes)); 
+}

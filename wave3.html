@@ -7,6 +7,9 @@
     <!-- scss -->
     <link rel="stylesheet" href="css/main.css">
 
+    <!-- vivify  -->
+    <link href="vivify.min.css" rel="stylesheet" type="text/css"/>
+
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?
     family=Nunito+Sans:wght@300&family=Outfit&display=swap" rel="stylesheet">
@@ -28,8 +31,11 @@
     <!-- navbar -->
     <div class="navbar">
         <nav>
+            <!-- calender -->
             <i class="far fa-calendar-alt fa-3x"></i>
+            <!-- date -->
             <span class="date"></span>
+            <!-- van counter -->
             <div class="van-count">
                 <i class="fas fa-shuttle-van fa-3x"></i> 
                 <span class="number" id="value">0</span>
@@ -63,10 +69,7 @@
                 <h2 class="drivers">
                     DRIVER
                 </h2>
-                <!-- <div class="form-group"> -->
-                <input type="text" class="text-area-driver form-control" 
-                placeholder="name" id="driver-input-3">
-                <!-- </div> -->
+                <input type="text" class="text-area-driver form-control" placeholder="name" id="driver-input-3">
             </div>
             <div class="cx">
                 <h2 class="cx-number">
@@ -80,24 +83,34 @@
                 </h2>
                 <input type="text" class="text-area-van form-control" placeholder="van number" id="van-input">
             </div>
-        <button type="submit" class="add-button"><i class="fas fa-plus-circle fa-2x"></i></button>
+            <!-- add button -->
+            <button type="submit" class="add-button"><i class="fas fa-plus-circle fa-2x"></i></button>
         </div>
         <!-- table section -->
         <table class="table">
-        <thead class="t-head">
-
-        </thead>
-        <tbody id="driver-list-3">
-
-        </tbody>
+            <thead class="t-head">
+            </thead>
+            <tbody id="driver-list-3">
+            </tbody>
         </table> 
     </form>
-    <!-- notes section -->
+    <!-- notes section --> 
     <article class="notes-container">
-        <p class="notes">
-            NOTES
-        </p>
-        <input type="text" class="notes-input" placeholder="...">
+        <form class="notes-form">
+            <div class="notes-add">
+                <p class="notes">
+                    NOTES
+                </p>
+                <button id="add-btn" class="add-note" id="notes-input" type="submit">
+                    add
+                </button>
+            </div>
+            <input type="text" class="notes-textarea" id="note-input" placeholder="..." contenteditable>
+        </form>
+        <div class="note-list">
+            <ul class="added-notes">
+            </ul>
+        </div>
     </article>
 
     <!-- Javascript -->
