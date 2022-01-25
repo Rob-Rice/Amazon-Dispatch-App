@@ -7,6 +7,9 @@
     <!-- scss -->
     <link rel="stylesheet" href="css/main.css">
 
+    <!-- vivify  -->
+    <link href="vivify.min.css" rel="stylesheet" type="text/css"/>
+
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?
     family=Nunito+Sans:wght@300&family=Outfit&display=swap" rel="stylesheet">
@@ -28,8 +31,11 @@
     <!-- navbar -->
     <div class="navbar">
         <nav>
+            <!-- calender -->
             <i class="far fa-calendar-alt fa-3x"></i>
+            <!-- date -->
             <span class="date"></span>
+            <!-- van counter -->
             <div class="van-count">
                 <i class="fas fa-shuttle-van fa-3x"></i> 
                 <span class="number" id="value">0</span>
@@ -84,7 +90,8 @@
         <table class="table">
             <thead class="t-head">
             </thead>
-            <tbody id="driver-list" class="tr-info">
+            <tbody id="driver-list" class="tr-info vivify fadeInRight">
+                
             </tbody>
         </table> 
     </form>
@@ -99,7 +106,6 @@
                     add
                 </button>
             </div>
-            <!-- <span class="notes-textarea" id="note-input"role="textbox" contenteditable></span> -->
             <input type="text" class="notes-textarea" id="note-input" placeholder="..." contenteditable>
         </form>
         <div class="note-list">

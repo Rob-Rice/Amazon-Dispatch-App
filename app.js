@@ -31,12 +31,11 @@ class Driver {
         const row = document.createElement('tr');
 
         row.innerHTML = `
-        <td><button type="submit" class="btn delete get-out">X</button></td>
-        <td class="drivers-name none">${name.driver}</td>
-        <td class="drivers-cx none">${name.cx}</td>
-        <td class="drivers-van none">${name.van}</td>
+        <td><button type="submit" class="btn delete vivify pullDown">X</button></td>
+        <td class="drivers-name none vivify pullDown">${name.driver}</td>
+        <td class="drivers-cx none vivify pullDown">${name.cx}</td>
+        <td class="drivers-van none vivify pullDown">${name.van}</td>
         `;
-
         list.appendChild(row);
     }
 // delete driver
@@ -173,7 +172,8 @@ table.addEventListener('click', (e) => {
     if(btn.contains('delete')){
         count--;
     } if (btn.contains('none')) {
-        count--;
+        // count--;
+        return;
     }
 
     vanNumber.textContent = count;
