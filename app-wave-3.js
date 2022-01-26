@@ -250,6 +250,7 @@ function saveNotes(note) {
     localStorage.setItem('notes', JSON.stringify(notes));
 }
 
+// notes storage to UI
 function getNotes() {
     let notes;
     if(localStorage.getItem('notes') === null) {
@@ -281,6 +282,7 @@ function getNotes() {
     })
 }
 
+// notes storage to UI
 function removeNotes(note) {
     let notes;
     if(localStorage.getItem('notes') === null) {

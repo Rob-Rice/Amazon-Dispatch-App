@@ -1,15 +1,5 @@
-$medium-gray: #929292;
-$very-light-gray: #e2e2df;
-$very-very-light-gray: #ececeb;
-$dark-gray: #383838;
-$lighter-td: #f8f8f8;
-$darker-td: #ccc;
-$red: #fd0002;
-$green: #60a752;
-$white: #fff;
-$light-red: #f3b3b3;
-$purple: #bf7fd8;
-
+@import 'variables';
+@import 'mixin';
 
 * {
     padding: 0;
@@ -31,10 +21,6 @@ nav {
     width: 100vw;
     padding: 5px 2%;
     background-color: $medium-gray;
-
-    // .fa-calendar-alt {
-
-    // }
 
     .date {
         font-family: 'Roboto Slab', serif;
@@ -330,7 +316,7 @@ position: relative;
         }
 
         .fa-trash-alt,
-        .fa-dot-circle {
+        .fa-check {
             pointer-events: none;
         }
     }
@@ -343,8 +329,69 @@ position: relative;
     transition: ease-in .3s;
 }
 
+// ----------------- refresh button ----------------- 
+.glow {
+    border: none;
+    outline: none;
+    color: $dark-gray;
+    background-color: $very-light-gray;
+    cursor: pointer;
+    position: relative;
+    text-decoration: underline;
+    font-size: 1rem;
+    font-weight: 520;
+    border-radius: 10px;
+    width: 220px;
+    height: 50px;
+    bottom: 99vh;
+    left: 3%;
 
+    &:before {
+        content: '';
+        background: linear-gradient(45deg, #000, #fff, #333, #999, #888, #444, #111);
+        position: absolute;
+        top: -2px;
+        left:-2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
 
+    &:active {
+        color: #000
+    }
+    
+    &:active:after {
+        background: transparent;
+    }
+    
+    &:hover:before {
+        opacity: 1;
+        color: $dark-gray;
+    }    
+
+    &:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }    
+
+    &:hover {
+        color: #999;
+        background-color: $very-very-light-gray;
+    }
+}
 // ----------------- alert message ----------------- 
 .alert-message {
     position: absolute;

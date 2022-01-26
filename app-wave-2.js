@@ -209,7 +209,7 @@ function addNote (ev) {
     completedNote.innerHTML = '<i class="far fa-dot-circle"></i>';
     completedNote.classList.add('completed-btn');
     noteDiv.appendChild(completedNote);
-    // delete through button
+    // delete button
     const deleteNotes = document.createElement('button');
     deleteNotes.innerHTML = '<i class="fas fa-trash-alt"></i>';
     deleteNotes.classList.add('trash-btn');
@@ -252,6 +252,7 @@ function saveNotes(note) {
     localStorage.setItem('notes', JSON.stringify(notes));
 }
 
+// notes storage to UI
 function getNotes() {
     let notes;
     if(localStorage.getItem('notes') === null) {
@@ -273,7 +274,7 @@ function getNotes() {
     completedNote.innerHTML = '<i class="far fa-dot-circle"></i>';
     completedNote.classList.add('completed-btn');
     noteDiv.appendChild(completedNote);
-    // delete through button
+    // delete button
     const deleteNotes = document.createElement('button');
     deleteNotes.innerHTML = '<i class="fas fa-trash-alt"></i>';
     deleteNotes.classList.add('trash-btn');
@@ -283,6 +284,7 @@ function getNotes() {
     })
 }
 
+// notes storage to UI
 function removeNotes(note) {
     let notes;
     if(localStorage.getItem('notes') === null) {

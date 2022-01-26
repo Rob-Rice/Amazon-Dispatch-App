@@ -250,6 +250,7 @@ function saveNotes(note) {
     localStorage.setItem('notes', JSON.stringify(notes));
 }
 
+// notes storage to UI
 function getNotes() {
     let notes;
     if(localStorage.getItem('notes') === null) {
@@ -281,6 +282,7 @@ function getNotes() {
     })
 }
 
+// notes storage to UI
 function removeNotes(note) {
     let notes;
     if(localStorage.getItem('notes') === null) {
@@ -291,4 +293,14 @@ function removeNotes(note) {
     const noteIndex = note.children[0].innerText;
     notes.splice(notes.indexOf(noteIndex), 1);
     localStorage.setItem('notes', JSON.stringify(notes)); 
+}
+
+// ----------------- refresh button ----------------- 
+function refresh() {
+    if(confirm('are you sure you want to refresh?') == true){
+        localStorage.clear();
+        location.reload()
+    } else {
+        return
+    } 
 }
